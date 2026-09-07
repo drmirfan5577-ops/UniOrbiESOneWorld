@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 160 100% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 160 100% 39%;
+    --radius: 0.75rem;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-white text-foreground;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+  .glass-ultra {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.99);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,1);
+  }
+  .glow-emerald {
+    box-shadow: 0 0 16px rgba(0, 200, 150, 0.6), 0 0 40px rgba(0, 200, 150, 0.2);
+  }
+  .glow-crimson {
+    box-shadow: 0 0 16px rgba(220, 20, 60, 0.6), 0 0 40px rgba(220, 20, 60, 0.2);
+  }
+  .glow-gold {
+    box-shadow: 0 0 16px rgba(255, 215, 0, 0.7), 0 0 40px rgba(255, 215, 0, 0.3);
+  }
+  .glow-sapphire {
+    box-shadow: 0 0 16px rgba(0, 102, 255, 0.6), 0 0 40px rgba(0, 102, 255, 0.2);
+  }
+  .tube-text-emerald {
+    color: #00C896;
+    text-shadow: 0 0 8px #00C896, 0 0 20px #00C896, 0 0 40px rgba(0,200,150,0.5);
+  }
+  .tube-text-crimson {
+    color: #DC143C;
+    text-shadow: 0 0 8px #DC143C, 0 0 20px #DC143C, 0 0 40px rgba(220,20,60,0.5);
+  }
+  .tube-text-gold {
+    color: #C8960A;
+    text-shadow: 0 0 8px #FFD700, 0 0 20px #FFD700, 0 0 40px rgba(255,215,0,0.5);
+  }
+  .tube-text-sapphire {
+    color: #0044CC;
+    text-shadow: 0 0 8px #0066FF, 0 0 20px #0066FF;
+  }
+  .tube-text-rose {
+    color: #CC1177;
+    text-shadow: 0 0 8px #FF69B4, 0 0 20px #FF69B4;
+  }
+  .gradient-emerald {
+    background: linear-gradient(135deg, #00C896, #00E5B0, #00C896);
+    background-size: 200% 200%;
+  }
+  .gradient-crimson {
+    background: linear-gradient(135deg, #DC143C, #FF4466, #DC143C);
+    background-size: 200% 200%;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .app-icon {
+    @apply flex flex-col items-center gap-1 cursor-pointer transition-all duration-200 active:scale-90;
+  }
+  .app-icon-img {
+    @apply rounded-2xl shadow-md transition-all duration-200 hover:shadow-lg;
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+  }
+  .bottom-nav-item {
+    @apply flex flex-col items-center justify-center gap-0.5 flex-1 py-2 cursor-pointer transition-all duration-200 active:scale-95;
+  }
+}
+
+/* Launcher-specific backgrounds */
+.launcher-smart {
+  background: linear-gradient(160deg, #f0f8ff 0%, #e8f4ff 30%, #f5fffa 60%, #fff8f0 100%);
+}
+.launcher-crimson {
+  background: radial-gradient(ellipse at center, #8B0000 0%, #4A0010 40%, #1a0008 100%);
+}
+.launcher-emerald {
+  background: radial-gradient(ellipse at center, #003320 0%, #004d2c 30%, #001a10 100%);
+}
+.launcher-uniedge {
+  background: linear-gradient(160deg, #ffffff 0%, #f0fff8 30%, #fff0f5 70%, #f0f0ff 100%);
+}
+.launcher-redenergy {
+  background: radial-gradient(ellipse at 50% 30%, #ff4400 0%, #cc0000 40%, #800000 100%);
+}
+.launcher-holographic {
+  background: linear-gradient(135deg, #fff 0%, #f0f8ff 25%, #fff0f8 50%, #f0fff0 75%, #fff 100%);
+}
+.launcher-golden {
+  background: linear-gradient(160deg, #fff9e6 0%, #fff3cc 40%, #ffedd4 100%);
+}
+.launcher-sapphire {
+  background: linear-gradient(160deg, #e6f0ff 0%, #ccddff 40%, #e6f5ff 100%);
+}
+.launcher-diamond {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5ff 25%, #f5fff5 50%, #fff5f5 75%, #ffffff 100%);
+}
+.launcher-aurora {
+  background: linear-gradient(160deg, #001a0d 0%, #003322 30%, #001a33 70%, #0d001a 100%);
+}
+.launcher-rose {
+  background: radial-gradient(ellipse at top, #fff0f5 0%, #ffe0ec 40%, #ffd6e8 100%);
+}
+
+/* Sidebar overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 75vw;
+  max-width: 300px;
+  z-index: 200;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.sidebar-left {
+  left: 0;
+  background: rgba(255,255,255,0.92);
+  border-right: 1.5px solid rgba(255,255,255,0.95);
+  box-shadow: 4px 0 32px rgba(0,0,0,0.1);
+}
+.sidebar-right {
+  right: 0;
+  background: rgba(255,255,255,0.92);
+  border-left: 1.5px solid rgba(255,255,255,0.95);
+  box-shadow: -4px 0 32px rgba(0,0,0,0.1);
+}
+
+/* News ticker */
+.news-ticker {
+  white-space: nowrap;
+  animation: ticker 35s linear infinite;
+}
+
+/* Scrollable pages inside the app frame */
+.page-scroll {
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.page-scroll::-webkit-scrollbar { width: 3px; }
+.page-scroll::-webkit-scrollbar-track { background: transparent; }
+.page-scroll::-webkit-scrollbar-thumb { background: rgba(0,200,150,0.4); border-radius: 10px; }
+
+/* Arabic text */
+.arabic-text {
+  font-family: 'Amiri', serif;
+  direction: rtl;
+}
+
+/* Admin panel modal */
+.admin-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
